@@ -18,7 +18,6 @@ class BracketElement:
         else:
             return 0
 
-
 class Bracket:
     '''
     Holds a complete tax bracket and provides useful functions for working with that tax bracket.
