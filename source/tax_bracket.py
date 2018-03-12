@@ -10,11 +10,11 @@ class BracketElement:
         self.end = end
         self.rate = rate
 
-    def calculate(self, salary):
-        if salary > self.end:
+    def calculate(self, amount):
+        if amount > self.end:
             return (self.end - self.start + 1) * self.rate
-        elif salary >= self.start:
-            return (salary - self.start + 1) * self.rate
+        elif amount >= self.start:
+            return (amount - self.start + 1) * self.rate
         else:
             return 0
 
@@ -26,8 +26,8 @@ class Bracket:
         self.name = name
         self.bracket_elements = bracket_elements
 
-    def annual_tax(self, salary):
+    def calculate_tax(self, amount):
         tax = 0
         for b in self.bracket_elements:
-            tax = tax + b.calculate(salary)
+            tax = tax + b.calculate(amount)
         return round(tax)
